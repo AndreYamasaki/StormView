@@ -50,7 +50,7 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
             vc.selectedImage = picturesSorted[indexPath.row]
-            vc.picturesList = picturesSorted
+            vc.pictureTitle = "Picture \(indexPath.row + 1) of \(picturesSorted.count)"
             navigationController?.pushViewController(vc, animated: true)
         }
     }
