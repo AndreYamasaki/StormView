@@ -12,6 +12,7 @@ class ViewController: UITableViewController {
     //MARK: - Attributes
     
     var pictures = [String]()
+    var picturesSorted = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,23 +30,26 @@ class ViewController: UITableViewController {
                 pictures.append(item)
             }
         }
+        
+        picturesSorted = pictures.sorted()
+        
     }
     
     //MARK: - TablewView Data Source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        pictures.count
+        picturesSorted.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "picture", for: indexPath)
-        cell.textLabel?.text = pictures[indexPath.row]
+        cell.textLabel?.text = picturesSorted[indexPath.row]
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
-            vc.selectedImage = pictures[indexPath.row]
+            vc.selectedImage = picturesSorted[indexPath.row]
             
             navigationController?.pushViewController(vc, animated: true)
         }

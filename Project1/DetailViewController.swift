@@ -9,6 +9,8 @@ import UIKit
 
 class DetailViewController: UIViewController, UITextFieldDelegate {
     
+    //MARK: - Attributes
+    
     @IBOutlet var imageView: UIImageView!
     
     var selectedImage: String?
@@ -24,6 +26,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
             imageView.image = UIImage(named: imageToLoad)
         }
     }
+    
+    //MARK: - TablewView DataSource
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
