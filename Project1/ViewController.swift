@@ -31,7 +31,7 @@ class ViewController: UITableViewController {
             }
         }
         
-        picturesSorted = pictures.sorted()
+        picturesSorted = pictures.sorted()  //Challenge 2: Show the list of images sorted by alphabetical order
         
     }
     
@@ -50,7 +50,7 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
             vc.selectedImage = picturesSorted[indexPath.row]
-            vc.pictureTitle = "Picture \(indexPath.row + 1) of \(picturesSorted.count)"
+            vc.pictureTitle = "Picture \(indexPath.row + 1) of \(picturesSorted.count)" // Challenge 3: Add "Picture (position in the list) of (number of pictures)" as the title of every picture
             navigationController?.pushViewController(vc, animated: true)
         }
     }
