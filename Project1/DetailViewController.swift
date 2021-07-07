@@ -7,19 +7,25 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITextFieldDelegate {
+class DetailViewController: UIViewController {
     
     //MARK: - Attributes
     
     @IBOutlet var imageView: UIImageView!
     
     var selectedImage: String?
-    var teste: UITextField = UITextField()
+    var picturesList = [String]()
+    var selectedNumber = 0
+    var totalPictures = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = selectedImage
+        
+        totalPictures = picturesList.count
+        if selectedNumber == totalPictures {
+            title = "\(selectedNumber + 1) of \(totalPictures)"
+        }
         navigationItem.largeTitleDisplayMode = .never
         
         if let imageToLoad = selectedImage {
