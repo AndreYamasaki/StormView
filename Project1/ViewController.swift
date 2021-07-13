@@ -21,6 +21,9 @@ class ViewController: UITableViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         
+        //Challenge 2 Day 23
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(sharedTapped))
+        
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
         let items = try! fm.contentsOfDirectory(atPath: path)
@@ -53,6 +56,17 @@ class ViewController: UITableViewController {
             vc.pictureTitle = "Picture \(indexPath.row + 1) of \(picturesSorted.count)" // Challenge 3: Add "Picture (position in the list) of (number of pictures)" as the title of every picture
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    //MARK: - Methods
+    
+    //Challenge 2 Day 23
+    @objc func sharedTapped() {
+        let challengeItem = ["Day 23 challenge 2"]
+        
+        let vc = UIActivityViewController(activityItems: challengeItem, applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
     }
 }
 
