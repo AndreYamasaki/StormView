@@ -21,7 +21,7 @@ class ViewController: UITableViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        //Challenge 2 Day 23
+        //Challenge 2 Day 22: Go back to project 1 and add a bar button item to the main view controller that recommends the app to other people.
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(sharedTapped))
         
         let fm = FileManager.default
@@ -60,7 +60,7 @@ class ViewController: UITableViewController {
     
     //MARK: - Methods
     
-    //Challenge 2 Day 23
+    //Challenge 2 Day 22 = Go back to project 1 and add a bar button item to the main view controller that recommends the app to other people.
     @objc func sharedTapped() {
         let challengeItem = ["Day 23 challenge 2"]
         
