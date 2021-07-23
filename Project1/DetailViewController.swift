@@ -13,6 +13,9 @@ class DetailViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
     
+    var selectedImageIndex: Int?
+    var totalImage: Int?
+    
     var selectedImage: String?
     var pictureTitle: String?
     
