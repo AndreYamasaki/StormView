@@ -75,8 +75,6 @@ class CollectionViewController: UICollectionViewController {
         cell.imageView.layer.borderWidth = 2
         cell.imageView.layer.cornerRadius = 3
         cell.layer.cornerRadius = 7
-        //cell.textLabel?.text =  pictures[indexPath.row] //"Picture \(indexPath.row + 1) of \(pictures.count)"
         return cell
     }
-
 }
